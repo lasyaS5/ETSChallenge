@@ -6,27 +6,23 @@ import org.junit.Test;
 /*
  * Contains test cases for the getSuit() and getRank() 
  * methods of the Card class
-*/
+ */
 
 public class CardTest {
 
 	@Before
 	public void setUp() throws Exception {
-		
+
 	}
-	
+
 	@Test
-	public void testGetSuit() {
-		Card card=new Card();
-		card.setSuit('s');
-		assertEquals('s',card.getSuit());
-	}
-   
-	@Test
-	public void testGetRank() {
-		Card card=new Card();
-		card.setRank(3);
-		assertEquals(3,card.getRank());
+	public void testGetSuitGetRank() {
+
+		Card card = new Card(Card.Suit.CLUBS, Card.Rank.ACE);
+		assertEquals("Clubs", card.getSuit().getText());
+		assertEquals(1, card.getRank().getRank());
+		assertEquals("Ace", card.getRank().getText());
+
 	}
 
 }

@@ -1,37 +1,53 @@
-
 public class Card {
+	private Suit suit;
+	private Rank rank;
 
-/*
- * Represents a single card in the deck 
- * spades-'s', diamond-'d', hearts-'h', clubs-'c'
- * Ace-1, Jack-11, Queen- 12, King- 13
-*/
-	
-private char suit;
-private int rank;
+	public Card(Suit suit, Rank rank) {
+		this.suit = suit;
+		this.rank = rank;
+	}
 
-/* 
- * getters and setters for Card class
-*/
+	public enum Suit {
+		HEARTS("Hearts"), DIAMONDS("Diamonds"), SPADES("Spades"), CLUBS("Clubs");
+		private String suit;
 
-public void setSuit(char suit) {
-	// TODO Auto-generated method stub
-	this.suit=suit;
-}
+		Suit(String suit) {
+			this.suit = suit;
+		}
 
-public char getSuit()
-{
-	return suit;
-}
+		public String getText() {
+			return this.suit;
+		}
+	}
 
-public void setRank(int rank)
-{
-	this.rank=rank;
-}
+	public enum Rank {
+		ACE(1, "Ace"), TWO(2, "Two"), THREE(3, "Three"), FOUR(4, "Four"), FIVE(
+				5, "Five"), SIX(6, "Six"), SEVEN(7, "Seven"), EIGHT(8, "Eight"), NINE(
+				9, "Nine"), TEN(10, "Ten"), JACK(11, "Jack"), QUEEN(12, "Queen"), KING(
+				13, "King");
+		private int rank;
+		private String text;
 
-public int getRank()
-{
-	return rank;
-}
+		Rank(int rank, String text) {
+			this.rank = rank;
+			this.text = text;
+		}
+
+		public int getRank() {
+			return this.rank;
+		}
+
+		public String getText() {
+			return this.text;
+		}
+	}
+
+	public Suit getSuit() {
+		return suit;
+	}
+
+	public Rank getRank() {
+		return rank;
+	}
 
 }
